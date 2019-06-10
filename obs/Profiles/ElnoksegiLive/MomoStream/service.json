@@ -1,0 +1,9 @@
+{
+    "settings": {
+        "bwtest": false,
+        "key": "2417947678267754?s_bl=1&s_ps=1&s_sml=0&s_sw=0&s_vt=api-s&a=AbwOV-QQ9gASBmjh",
+        "server": "rtmps://rtmp-api.facebook.com:443/rtmp/",
+        "service": "Facebook Live"
+    },
+    "type": "rtmp_common"
+}

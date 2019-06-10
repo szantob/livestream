@@ -1,0 +1,70 @@
+<!-- Display the countdown timer in an element -->
+<style>
+	@font-face {
+	  font-family: 'Gotham';
+	  src: url('fonts/Gotham-Bold.eot'); /* IE9 Compat Modes */
+	  src: url('fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('fonts/Gotham-Bold.woff') format('woff'), /* Modern Browsers */
+		 url('fonts/Gotham-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+		 url('fonts/Gotham-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+	   font-weight: 700;
+	   font-style: normal;
+	 }
+
+	@font-face {
+	  font-family: 'Gotham';
+	  src: url('fonts/Gotham-Medium.eot'); /* IE9 Compat Modes */
+	  src: url('fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('fonts/Gotham-Medium.woff') format('woff'), /* Modern Browsers */
+		 url('fonts/Gotham-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+		 url('fonts/Gotham-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+	   font-weight: 400;
+	   font-style: normal;
+	 }
+
+	@font-face {
+	  font-family: 'Gotham';
+	  src: url('fonts/Gotham-Thin.eot'); /* IE9 Compat Modes */
+	  src: url('fonts/Gotham-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('fonts/Gotham-Thin.woff') format('woff'), /* Modern Browsers */
+		 url('fonts/Gotham-Thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+		 url('fonts/Gotham-Thin.svg#svgFontName') format('svg'); /* Legacy iOS */
+	   font-weight: 300;
+	   font-style: normal;
+	 }
+	p{
+		font-family: 'Gotham';
+		font-size: '40px';
+	}
+</style>
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jun 05, 2019 17:7:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML ="Live: "+ minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
